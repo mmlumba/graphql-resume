@@ -1,0 +1,16 @@
+{
+  "name": "graphql-resume",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "graphql": "^14.1.1",
+    "graphql-yoga": "^1.17.1"
+  },
+  "devDependencies": {
+    "graphql-type-json": "^0.2.1"
+  }
+}
