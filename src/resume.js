@@ -4,12 +4,14 @@ module.exports = {
             "type":"employment",
             "role":"Front End Software Engineer",
             "company":"Demosphere",
-            "startDate": "2017-09-13",
+            "startDate": "2018-09-13",
             "endDate": "present",
             "responsibilities":[
-               "Develop features for a new product using React, GraphQL, and Apollo",
-               "Built new backend sources of information using MongoDB, Mongoose, and GraphQL",
-               "Collaborate with other developers to create a new front end architecture with React and Material UI"
+               "Developing Node.JS APIs for new back end services using GraphQL and MongoDB",
+               "Creating reusable UI components using React, Google’s Material Design, and Apollo GraphQL for use in future UI development",
+               "Redesigned existing client-facing products such as a messaging system, theme customizer, and form builder with full stack JavaScript",
+               "Implemented client side sports uniform design generator using React and GraphQL",
+               "Organizing “code and coffee” sessions in order to promote knowledge sharing of tech best practices in the engineering team"
             ]
          },
         {
@@ -84,6 +86,12 @@ module.exports = {
               "Assist women working on front end web development projects and exercises during front end lab nights",
               "Organize tech talks and workshops for women in technology"
            ]
-        }
+        },
+        {
+         "type":"award",
+         "organization":"DC Fem Tech",
+         "awardDate": "2021-11-10",
+         "description":"DCFemTech Power Women in Code Category"
+      }
      ]
 }

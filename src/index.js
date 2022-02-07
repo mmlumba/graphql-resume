@@ -10,6 +10,7 @@ type Query {
   work: [WorkActivity]
   education: [EducationActivity]
   volunteer: [VolunteerActivity]
+  award: [AwardActivity]
 }
 
 interface Activity {
@@ -43,6 +44,13 @@ type VolunteerActivity implements Activity{
     organization: String
     responsibilities: [String!]
 }
+
+type AwardActivity {
+  type: String
+  awardDate: String
+  organization: String
+  description: String
+}
 `
 
 const resolvers = {
@@ -54,8 +62,11 @@ const resolvers = {
         else if (activity.school) {
             return 'EducationActivity'
         }
-        else if (activity.organization) {
+        else if (activity.type === 'volunteer') {
             return 'VolunteerActivity'
+        }
+        else if (activity.type === 'award') {
+            return 'AwardActivity'
         }
         else {
             return null
@@ -65,9 +76,10 @@ const resolvers = {
   Query: {
     info: () => `Resume info based on GraphQL`,
     resume: () => resume,
-    work: () => resume.filter(work => work.hasOwnProperty("company")),
-    education: () => resume.filter(school => school.hasOwnProperty("school")),
-    volunteer: () => resume.filter(school => school.hasOwnProperty("volunteer"))
+    work: () => resume.filter(obj => obj.hasOwnProperty("company")),
+    education: () => resume.filter(obj => obj.hasOwnProperty("school")),
+    volunteer: () => resume.filter(obj => obj.type === "volunteer"),
+    award: () => resume.filter(obj => obj.type === 'award')
   }
 }
 
